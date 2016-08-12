@@ -1,0 +1,151 @@
+html,body{height: 100%;}
+.web{
+	width: 640px;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;/*容易去控制子元素的绝对定位*/
+	overflow: hidden;
+}
+/*页面头部容器*/
+.web header{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 89px;
+	background: #b20000;
+}
+
+header i.fa{
+	color:white;
+	font-size:30px;
+}
+header .left{
+	float: left;
+	margin-left: 24px;
+	margin-top: 25px;
+	position: relative;
+}
+header .left .fa{
+	font-size:40px;
+}
+header .left span{
+	position: absolute;
+	left:23px;
+	top:-12px;
+	width:26px;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	background: #ff0000;
+	font-size: 12px;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	color: #FFFFFF;
+}
+
+header .right{
+	float: right;
+	padding: 6px;
+	margin-right: 17px;
+	margin-top:22px;
+	border: 2px solid #FFFFFF;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+
+header .center{
+	height: 89px;
+	line-height: 89px;
+	text-align: center;
+}
+header .center img{
+	display: inline-block;
+	vertical-align:middle;
+}
+
+
+
+
+
+
+/*页面主体内容容器*/
+.web .content_wrap{
+	position: absolute;
+	top: 89px;
+	bottom:95px;
+	width: 100%;
+	overflow-y:scroll;
+	/*优化移动端的滚动体验*/
+	-webkit-overflow-scrolling: touch;
+}
+/*页面底部容器*/
+.web  footer{
+	position: absolute;
+	bottom: 0;
+	height: 95px;
+	width: 100%;
+	background: #f5f5f5;
+	border-top:1px solid #c8c6c7;
+}
+footer ul {
+	height: 100%;
+}
+footer ul li {
+	float: left;
+	height: 100%;
+	width: 20%;
+	text-align: center;
+	padding-top: 16px;
+}
+footer ul li .fa{
+	font-size:45px;
+	color: #8b8b8b;
+	
+}
+footer ul li span{
+	display: block;
+	font-size:20px;
+	color: #8b8b8b;
+	text-align: center;
+	margin-top: 5px;
+}
+footer ul li .fa,
+footer ul li span{
+	-webkit-transition: all 300ms ease-in;
+	transition: all 300ms ease-in;
+}
+
+
+footer a:hover .fa,
+footer a:hover span,
+footer a.active .fa,
+footer a.active span
+{
+	color: #b60207;
+}
+
+
+
+
+
+
+
+
+/***侧边栏样式**/
+.slideMenu{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: #222222;
+	left: 0;
+	top:0;
+	-webkit-transform: translateX(-100%);
+	transform: translateX(-100%);/*基于自身的宽高做百分比计算，然后进行对应方向的位置偏移*/
+	-webkit-transition: all 300ms ease-in;
+	transition: all 300ms ease-in;
+}
+
+#slideMenu:checked~.slideMenu{
+	-webkit-transform: translateX(0%);
+	transform: translateX(0%);
+}

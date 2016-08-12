@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css"/>
+	<style type="text/css">
+		html,body{
+	height: 100%;
+}
+
+.web{
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	width: 640px;
+	margin: 0 auto;
+	background: black;
+	text-align: center;
+
+}
+
+.clearfix::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.page{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top:0;
+	background: black;
+	z-index: 1;
+	transition: all 300ms ease-out;
+	overflow: hidden;
+	
+}
+/***用户信息弹窗样式***/
+.page.user {/*用户信息弹层一开始在页面的左侧*/
+	-webkit-transform: translateX(-100%);
+	transform: translateX(-100%);
+}
+
+/*用户信息弹层进场状态*/
+#user:checked~.user{
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}
+
+/***搜索弹窗样式***/
+.page.search{/*一开始在主页面的上方隐藏*/
+	-webkit-transform: translateY(-100%);
+	transform: translateY(-100%);
+	
+}
+#search:checked~.search{
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+
+/**弹出的共用头部**/
+.page_head{
+	padding-bottom: 16px;
+	border-bottom: 1px solid #303030;
+	width: 610px;
+	border-left: -20px;
+	border-right: 20px;
+}
+.page_head .left{
+	float:left;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background: #b60005;
+	border-radius: 50%;
+	margin-left: 13px;
+	margin-top: 20px;
+}
+.page_head .left .fa{
+	color: white;
+	font-size: 34px;
+	vertical-align: middle;
+}
+.page_head .right {
+	float: right;
+	width: 510px;
+	height: 49px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	border: 2px solid white;
+	margin-right: 20px;
+	margin-top: 19px;
+}
+.page_head .right button{
+	padding-left: 11px;
+	padding-top: 0px;
+	background: none;
+	border: none;
+}
+.page_head .right button .fa{
+	font-size:29px;
+	color: #FFFFFF;
+}
+.page_head .right input{
+	line-height: 49px;
+	font-size: 27px;
+	color: #FFFFFF;
+	width: 450px;
+	background: none;
+	padding: 0 17px;
+	box-sizing:border-box;
+	border: none;
+}
+.page_head .right input::-webkit-input-placeholder{/*控制input框中的提示语*/
+	font-size:29px;
+}
+.house img{
+	width:130px;
+	height: 130px;
+	border-radius: 50%;
+	margin-top: 35px;
+}
+.house span{
+	position: absolute;
+	top: 165px;
+	left: 350px;
+	width: 26px;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	background: #FF0000;
+	font-size: 12px;
+	border-radius: 50%;
+	color: white;
+}
+	</style>
+	<body>
+		<div class="web">
+			<div class="home wait">
+				<div><img src="img/top_logo.jpg" alt="" /></div>
+			<div class="page_head clearfix">
+				<div class="left">
+					<i class="fa fa-close"></i>
+				</div>
+				<div class="right">
+					<button><i class="fa fa-search"></i>
+					<input type="text" placeholder="Search"/>
+				</div>
+			</div>
+			<div class="house">
+				<img src="img/QQ图片20150629231023.jpg"/>
+				<span>1</span>
+			</div>
+			</div>
+		
+		</div>
+	</body>
+</html>
